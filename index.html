@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahmoud Gamal | Cloud Security & Cybersecurity Specialist</title>
+  <meta name="description" content="Portfolio of Mahmoud Gamal - Cloud Security & Cybersecurity Specialist focusing on AWS, Network Security, IAM, Security Monitoring, and Threat Detection.">
+  <meta name="theme-color" content="#070a10">
+
+  <!-- Favicon Cyber Sapphire Shield -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            sapphire: {
+              950: '#070a10',
+              900: '#0d121e',
+              850: '#0f172a',
+              800: '#1e293b',
+              700: '#334155',
+              600: '#0284c7',
+              500: '#0ea5e9',
+              400: '#38bdf8',
+              300: '#7dd3fc'
+            },
+            emeraldGuard: {
+              500: '#10b981',
+              400: '#34d399',
+              300: '#6ee7b7'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-sapphire-950 text-slate-100 min-h-screen relative selection:bg-sky-500 selection:text-slate-950">
+
+  <!-- Ambient Glow Backgrounds - Cyber Sapphire & Emerald -->
+  <div class="bg-sapphire-glow w-[600px] h-[600px] bg-sky-500/20 top-[-100px] left-[-100px]"></div>
+  <div class="bg-emerald-glow w-[550px] h-[550px] bg-emerald-500/15 top-[30%] right-[-150px]"></div>
+  <div class="bg-sapphire-glow w-[500px] h-[500px] bg-sky-600/20 bottom-[10%] left-[-100px]"></div>
+
+  <!-- Background Grid Pattern -->
+  <div class="fixed inset-0 bg-cyber-grid opacity-60 pointer-events-none z-0"></div>
+
+  <!-- ==========================================================================
+       NAVBAR
+       ========================================================================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-sky-500/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-3 group text-decoration-none">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-600 to-emerald-600 border border-sky-400/50 flex items-center justify-center shadow-lg shadow-sky-950 group-hover:border-sky-300 transition-all">
+          <i data-lucide="shield" class="w-5 h-5 text-white group-hover:scale-110 transition-transform"></i>
+        </div>
+        <div>
+          <span class="text-lg font-bold tracking-tight text-white group-hover:text-sky-400 transition-colors">Mahmoud Gamal</span>
+          <span class="block text-[10px] font-mono text-sky-400 uppercase tracking-widest">Cloud Security Specialist</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#home" class="nav-link nav-link-item text-sm font-medium text-slate-300 hover:text-white transition-colors">Home</a>
+        <a href="#about" class="nav-link nav-link-item text-sm font-medium text-slate-300 hover:text-white transition-colors">About</a>
+        <a href="#skills" class="nav-link nav-link-item text-sm font-medium text-slate-300 hover:text-white transition-colors">Skills</a>
+        <a href="#projects" class="nav-link nav-link-item text-sm font-medium text-slate-300 hover:text-white transition-colors">Projects</a>
+        <a href="#experience" class="nav-link nav-link-item text-sm font-medium text-slate-300 hover:text-white transition-colors">Experience</a>
+        <a href="#vision" class="nav-link nav-link-item text-sm font-medium text-slate-300 hover:text-white transition-colors">Vision</a>
+        <a href="#contact" class="nav-link nav-link-item text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#contact" class="px-4 py-2 text-xs font-bold rounded-lg bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/40 text-sky-300 transition-all shadow-md shadow-sapphire-950 flex items-center gap-2">
+          <span class="pulse-dot"></span>
+          <span>Security Portal</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" class="md:hidden p-2 rounded-lg bg-sapphire-900 border border-sky-500/30 text-slate-300 hover:text-white focus:outline-none">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-sky-500/25 bg-sapphire-950/98 backdrop-blur-xl px-4 pt-4 pb-6 space-y-3">
+      <a href="#home" class="nav-link-item block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-sapphire-900 hover:text-sky-400">Home</a>
+      <a href="#about" class="nav-link-item block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-sapphire-900 hover:text-sky-400">About</a>
+      <a href="#skills" class="nav-link-item block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-sapphire-900 hover:text-sky-400">Skills</a>
+      <a href="#projects" class="nav-link-item block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-sapphire-900 hover:text-sky-400">Projects</a>
+      <a href="#experience" class="nav-link-item block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-sapphire-900 hover:text-sky-400">Experience</a>
+      <a href="#vision" class="nav-link-item block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-sapphire-900 hover:text-sky-400">Vision</a>
+      <a href="#contact" class="nav-link-item block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-sapphire-900 hover:text-sky-400">Contact</a>
+      <div class="pt-2">
+        <a href="#contact" class="w-full btn-primary py-2.5 text-sm">
+          <i data-lucide="send" class="w-4 h-4"></i> Get In Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="relative z-10">
+
+    <!-- ==========================================================================
+         HERO SECTION (#home)
+         ========================================================================== -->
+    <section id="home" class="min-h-screen relative flex items-center justify-center pt-24 pb-16 overflow-hidden">
+      <!-- Interactive Network Canvas Backdrop -->
+      <canvas id="cyber-canvas"></canvas>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          
+          <!-- Specialization Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sapphire-900/80 border border-sky-400/40 text-sky-300 text-xs font-mono tracking-wide shadow-lg">
+            <i data-lucide="lock" class="w-3.5 h-3.5 text-sky-400"></i>
+            <span>Cloud Security & Cybersecurity Specialist</span>
+          </div>
+
+          <!-- Name & Primary Title -->
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Mahmoud Gamal
+            </h1>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gradient-cyan-emerald">
+              Cloud Security & Cybersecurity
+            </h2>
+          </div>
+
+          <!-- Description -->
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal">
+            Building secure, reliable and scalable cloud environments with a strong foundation in cybersecurity and networking.
+          </p>
+
+          <!-- Key Technical Pillars Tags -->
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-3 py-1 text-xs font-mono rounded-md bg-sapphire-900 border border-sky-500/30 text-slate-300 flex items-center gap-1.5">
+              <i data-lucide="cloud" class="w-3.5 h-3.5 text-sky-400"></i> AWS Cloud
+            </span>
+            <span class="px-3 py-1 text-xs font-mono rounded-md bg-sapphire-900 border border-sky-500/30 text-slate-300 flex items-center gap-1.5">
+              <i data-lucide="key" class="w-3.5 h-3.5 text-sky-400"></i> IAM & Identity
+            </span>
+            <span class="px-3 py-1 text-xs font-mono rounded-md bg-sapphire-900 border border-sky-500/30 text-slate-300 flex items-center gap-1.5">
+              <i data-lucide="network" class="w-3.5 h-3.5 text-sky-400"></i> Network Security
+            </span>
+            <span class="px-3 py-1 text-xs font-mono rounded-md bg-sapphire-900 border border-sky-500/30 text-slate-300 flex items-center gap-1.5">
+              <i data-lucide="activity" class="w-3.5 h-3.5 text-emerald-400"></i> Threat Detection
+            </span>
+          </div>
+
+          <!-- Call to Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#projects" class="btn-primary">
+              <span>View My Work</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <span>Contact Me</span>
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual: Interactive Cyber Sapphire Security Shield Visual -->
+        <div class="lg:col-span-5 flex justify-center items-center relative">
+          <div class="relative w-72 h-72 sm:w-88 sm:h-88 flex items-center justify-center">
+            
+            <!-- Outer Pulsing Rings -->
+            <div class="absolute inset-0 rounded-full border border-sky-500/30 shield-spin"></div>
+            <div class="absolute inset-4 rounded-full border border-dashed border-emerald-500/40 animate-spin" style="animation-duration: 20s;"></div>
+            <div class="absolute inset-10 rounded-full bg-gradient-to-br from-sapphire-900 to-sapphire-950 border border-sky-400/40 backdrop-blur-md"></div>
+            
+            <!-- Center Shield Visual & Glow -->
+            <div class="relative z-10 w-36 h-36 rounded-2xl bg-gradient-to-br from-sky-600 via-sky-700 to-sapphire-950 border border-sky-400/60 flex flex-col items-center justify-center shadow-2xl shadow-sky-950 group">
+              <i data-lucide="shield-check" class="w-16 h-16 text-white drop-shadow-[0_0_18px_rgba(56,189,248,0.7)]"></i>
+              <span class="mt-2 text-[10px] font-mono tracking-widest text-sky-200 uppercase font-bold">SECURE CLOUD</span>
+            </div>
+
+            <!-- Orbiting Subnet Node Chips -->
+            <div class="absolute top-2 right-4 px-3 py-1.5 rounded-lg glass-card border-sky-400/30 text-xs font-mono flex items-center gap-2 shadow-lg">
+              <i data-lucide="server" class="w-3.5 h-3.5 text-sky-400"></i>
+              <span class="text-slate-200">AWS VPC Active</span>
+            </div>
+
+            <div class="absolute bottom-4 left-2 px-3 py-1.5 rounded-lg glass-card border-sky-400/30 text-xs font-mono flex items-center gap-2 shadow-lg">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span class="text-slate-200">Monitoring 24/7</span>
+            </div>
+
+            <div class="absolute bottom-16 right-0 px-3 py-1.5 rounded-lg glass-card border-sky-400/30 text-xs font-mono flex items-center gap-2 shadow-lg">
+              <i data-lucide="cpu" class="w-3.5 h-3.5 text-sky-400"></i>
+              <span class="text-slate-200">IAM Guard</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         ABOUT ME SECTION (#about)
+         ========================================================================== -->
+    <section id="about" class="py-24 relative bg-sapphire-900/60 border-y border-sky-500/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sapphire-850 border border-sky-400/40 text-sky-300 text-xs font-mono uppercase tracking-wider">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-sky-400"></i> Technical Profile
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">About Me</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 via-emerald-400 to-sky-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left Column: Primary About Card -->
+          <div class="lg:col-span-7 glass-card p-8 sm:p-10 card-top-line space-y-6">
+            
+            <div class="flex items-center gap-4 border-b border-sapphire-800 pb-6">
+              <div class="w-14 h-14 rounded-2xl bg-sapphire-800 border border-sky-400/50 flex items-center justify-center shrink-0 shadow-md">
+                <i data-lucide="shield-alert" class="w-7 h-7 text-sky-400"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Mahmoud Gamal</h3>
+                <p class="text-xs font-mono text-sky-400">Cloud Security & Cybersecurity Specialist</p>
+              </div>
+            </div>
+
+            <!-- Exact Text Paragraphs with Sapphire Highlights -->
+            <div class="space-y-4 text-slate-300 text-base leading-relaxed">
+              <p>
+                My name is <strong class="text-white font-bold">Mahmoud Gamal</strong>, and I specialize in <strong class="text-sky-300 font-bold">Cloud Security</strong>, helping businesses build secure and reliable cloud environments that meet their specific security and business needs.
+              </p>
+              <p>
+                I focus on protecting data and cloud workloads, reducing security risks, securing identities and access through IAM, and applying effective cloud security, monitoring, and threat detection practices.
+              </p>
+              <p>
+                My goal is to provide practical security solutions that help clients protect their assets, maintain business continuity, and scale securely while aligning with the evolving needs of the cloud market.
+              </p>
+            </div>
+
+            <!-- Professional Mindset Badges -->
+            <div class="pt-4 border-t border-sapphire-800 flex flex-wrap gap-3">
+              <div class="px-3.5 py-1.5 rounded-lg bg-sapphire-900 border border-sky-500/30 text-xs font-mono text-slate-300 flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Technical Foundation
+              </div>
+              <div class="px-3.5 py-1.5 rounded-lg bg-sapphire-900 border border-sky-500/30 text-xs font-mono text-slate-300 flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Hands-on Experience
+              </div>
+              <div class="px-3.5 py-1.5 rounded-lg bg-sapphire-900 border border-sky-500/30 text-xs font-mono text-slate-300 flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Practical Security Mindset
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: 4 Key Pillars Grid -->
+          <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="glass-card p-5 border-sky-500/30 hover:border-sky-400/60 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center mb-3">
+                <i data-lucide="cloud-lightning" class="w-5 h-5 text-sky-400"></i>
+              </div>
+              <h4 class="text-base font-bold text-white mb-1">Cloud Workload Protection</h4>
+              <p class="text-xs text-slate-400 leading-normal">Securing compute, storage, and cloud infrastructure workloads from unauthorized access.</p>
+            </div>
+
+            <div class="glass-card p-5 border-sky-500/30 hover:border-sky-400/60 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center mb-3">
+                <i data-lucide="key-round" class="w-5 h-5 text-sky-400"></i>
+              </div>
+              <h4 class="text-base font-bold text-white mb-1">IAM & Access Security</h4>
+              <p class="text-xs text-slate-400 leading-normal">Implementing strict Least Privilege policies, identity isolation, and role permissions.</p>
+            </div>
+
+            <div class="glass-card p-5 border-sky-500/30 hover:border-sky-400/60 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center mb-3">
+                <i data-lucide="radar" class="w-5 h-5 text-emerald-400"></i>
+              </div>
+              <h4 class="text-base font-bold text-white mb-1">Threat Detection</h4>
+              <p class="text-xs text-slate-400 leading-normal">Active security monitoring, log analysis, and rapid threat identification.</p>
+            </div>
+
+            <div class="glass-card p-5 border-sky-500/30 hover:border-sky-400/60 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center mb-3">
+                <i data-lucide="shield-off" class="w-5 h-5 text-sky-400"></i>
+              </div>
+              <h4 class="text-base font-bold text-white mb-1">Risk Mitigation</h4>
+              <p class="text-xs text-slate-400 leading-normal">Reducing exposure surface and aligning security with business continuity goals.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SKILLS SECTION (#skills)
+         ========================================================================== -->
+    <section id="skills" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sapphire-850 border border-sky-400/40 text-sky-300 text-xs font-mono uppercase tracking-wider">
+            <i data-lucide="cpu" class="w-3.5 h-3.5 text-sky-400"></i> Core Competencies
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Technical Skills</h2>
+          <p class="text-slate-400 text-sm sm:text-base">Specialized domain expertise across Networking, Cybersecurity, and AWS Cloud Infrastructure.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 via-emerald-400 to-sky-500 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+          <button class="skill-filter-btn active px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all border border-sky-400/70 bg-sky-600 text-white shadow-md shadow-sapphire-950" data-filter="all">
+            All Domains
+          </button>
+          <button class="skill-filter-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border border-sky-500/30 bg-sapphire-900/90 text-slate-300 hover:text-sky-300 hover:border-sky-400/60" data-filter="networking">
+            Networking
+          </button>
+          <button class="skill-filter-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border border-sky-500/30 bg-sapphire-900/90 text-slate-300 hover:text-sky-300 hover:border-sky-400/60" data-filter="cybersecurity">
+            Cybersecurity
+          </button>
+          <button class="skill-filter-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all border border-sky-500/30 bg-sapphire-900/90 text-slate-300 hover:text-sky-300 hover:border-sky-400/60" data-filter="cloud">
+            Cloud Computing
+          </button>
+        </div>
+
+        <!-- 3 Groups Grid Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- GROUP 1: NETWORKING -->
+          <div class="skill-card glass-card p-6 card-top-line space-y-6" data-category="networking">
+            <div class="flex items-center gap-3 pb-4 border-b border-sapphire-800">
+              <div class="w-10 h-10 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center">
+                <i data-lucide="network" class="w-5 h-5 text-sky-400"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white">Networking</h3>
+                <p class="text-xs font-mono text-sky-400">Network Foundations</p>
+              </div>
+            </div>
+
+            <ul class="space-y-3 font-mono text-xs">
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-sky-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="layers" class="w-4 h-4 text-sky-400 shrink-0"></i>
+                <span class="text-slate-200">TCP/IP</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-sky-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="git-commit" class="w-4 h-4 text-sky-400 shrink-0"></i>
+                <span class="text-slate-200">OSI Model</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-sky-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="router" class="w-4 h-4 text-sky-400 shrink-0"></i>
+                <span class="text-slate-200">Routing & Switching</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-sky-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="wrench" class="w-4 h-4 text-sky-400 shrink-0"></i>
+                <span class="text-slate-200">Network Troubleshooting</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-sky-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="shield" class="w-4 h-4 text-sky-400 shrink-0"></i>
+                <span class="text-slate-200">Network Security Fundamentals</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- GROUP 2: CYBERSECURITY -->
+          <div class="skill-card glass-card p-6 card-top-line space-y-6" data-category="cybersecurity">
+            <div class="flex items-center gap-3 pb-4 border-b border-sapphire-800">
+              <div class="w-10 h-10 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center">
+                <i data-lucide="shield-alert" class="w-5 h-5 text-emerald-400"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white">Cybersecurity</h3>
+                <p class="text-xs font-mono text-emerald-400">Defensive Operations</p>
+              </div>
+            </div>
+
+            <ul class="space-y-3 font-mono text-xs">
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-emerald-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="activity" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span class="text-slate-200">Security Monitoring & Analysis</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-emerald-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="lock" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span class="text-slate-200">Network Security</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-emerald-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="search" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span class="text-slate-200">Vulnerability Assessment</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-emerald-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="radar" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span class="text-slate-200">Threat Detection Fundamentals</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-emerald-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="file-search" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span class="text-slate-200">Security Incident Analysis</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- GROUP 3: CLOUD COMPUTING -->
+          <div class="skill-card glass-card p-6 card-top-line space-y-6" data-category="cloud">
+            <div class="flex items-center gap-3 pb-4 border-b border-sapphire-800">
+              <div class="w-10 h-10 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center">
+                <i data-lucide="cloud-cog" class="w-5 h-5 text-sky-400"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white">Cloud Computing</h3>
+                <p class="text-xs font-mono text-sky-400">AWS Infrastructure</p>
+              </div>
+            </div>
+
+            <ul class="space-y-3 font-mono text-xs">
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-sky-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="server" class="w-4 h-4 text-sky-400 shrink-0"></i>
+                <span class="text-slate-200">AWS Compute, Storage & Networking</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-sky-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="key" class="w-4 h-4 text-sky-400 shrink-0"></i>
+                <span class="text-slate-200">IAM & Access Management</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-sky-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="globe" class="w-4 h-4 text-sky-400 shrink-0"></i>
+                <span class="text-slate-200">VPC & Cloud Networking</span>
+              </li>
+              <li class="p-3 rounded-lg bg-sapphire-900/90 border border-sky-500/30 hover:border-sky-400/60 transition-all flex items-center gap-3">
+                <i data-lucide="scaling" class="w-4 h-4 text-sky-400 shrink-0"></i>
+                <span class="text-slate-200">High Availability & Scalability</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         PROJECTS SECTION (#projects)
+         ========================================================================== -->
+    <section id="projects" class="py-24 relative bg-sapphire-900/60 border-y border-sky-500/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sapphire-850 border border-sky-400/40 text-sky-300 text-xs font-mono uppercase tracking-wider">
+            <i data-lucide="terminal" class="w-3.5 h-3.5 text-sky-400"></i> Hands-on Implementations
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Projects & Technical Labs</h2>
+          <p class="text-slate-400 text-sm sm:text-base">Practical lab exercises and cloud architecture projects demonstrating security & networking concepts.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 via-emerald-400 to-sky-500 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- PROJECT 1: NETWORKING LABS -->
+          <div class="glass-card flex flex-col justify-between p-6 card-top-line group">
+            <div class="space-y-4">
+              
+              <!-- Card Header & Icon -->
+              <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center text-sky-400 group-hover:border-sky-300 transition-colors">
+                  <i data-lucide="network" class="w-6 h-6"></i>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono bg-sapphire-900 text-sky-300 border border-sky-500/30">Lab Series</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
+                Networking Labs
+              </h3>
+
+              <!-- Description -->
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Practical networking exercises focused on network configuration, connectivity, protocols, troubleshooting, and security.
+              </p>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">TCP/IP</span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">Networking</span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">Routing</span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">Troubleshooting</span>
+              </div>
+
+            </div>
+
+            <!-- Action Button -->
+            <div class="pt-6 border-t border-sapphire-800 mt-6">
+              <button class="view-project-btn w-full btn-secondary text-xs py-2.5" data-project="networking-labs">
+                <span>View Project Details</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: CYBERSECURITY LABS -->
+          <div class="glass-card flex flex-col justify-between p-6 card-top-line group">
+            <div class="space-y-4">
+              
+              <!-- Card Header & Icon -->
+              <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-xl bg-sapphire-800 border border-emerald-400/40 flex items-center justify-center text-emerald-400 group-hover:border-emerald-300 transition-colors">
+                  <i data-lucide="shield-check" class="w-6 h-6"></i>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono bg-sapphire-900 text-emerald-300 border border-emerald-500/30">Security Lab</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                Cybersecurity Labs
+              </h3>
+
+              <!-- Description -->
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Practical security labs covering cybersecurity fundamentals, vulnerabilities, network security, and security analysis.
+              </p>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-emerald-500/30 text-slate-300">Cybersecurity</span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-emerald-500/30 text-slate-300">Networking</span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-emerald-500/30 text-slate-300">Linux</span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-emerald-500/30 text-slate-300">Security Tools</span>
+              </div>
+
+            </div>
+
+            <!-- Action Button -->
+            <div class="pt-6 border-t border-sapphire-800 mt-6">
+              <button class="view-project-btn w-full btn-secondary text-xs py-2.5" data-project="cybersecurity-labs">
+                <span>View Project Details</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: AWS CLOUD PROJECTS -->
+          <div class="glass-card flex flex-col justify-between p-6 card-top-line group">
+            <div class="space-y-4">
+              
+              <!-- Card Header & Icon -->
+              <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center text-sky-400 group-hover:border-sky-300 transition-colors">
+                  <i data-lucide="cloud" class="w-6 h-6"></i>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono bg-sapphire-900 text-sky-300 border border-sky-500/30">Cloud Architecture</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
+                AWS Cloud Projects
+              </h3>
+
+              <!-- Description -->
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Hands-on implementations using AWS services to understand cloud infrastructure, security, networking, and deployment concepts.
+              </p>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">AWS</span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">Cloud Computing</span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">IAM</span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">Networking</span>
+              </div>
+
+            </div>
+
+            <!-- Action Button -->
+            <div class="pt-6 border-t border-sapphire-800 mt-6">
+              <button class="view-project-btn w-full btn-secondary text-xs py-2.5" data-project="aws-cloud-projects">
+                <span>View Project Details</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         EXPERIENCE SECTION (#experience)
+         ========================================================================== -->
+    <section id="experience" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sapphire-850 border border-sky-400/40 text-sky-300 text-xs font-mono uppercase tracking-wider">
+            <i data-lucide="briefcase" class="w-3.5 h-3.5 text-sky-400"></i> Practical Training
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Professional Experience</h2>
+          <p class="text-slate-400 text-sm sm:text-base">Hands-on technical training and intensive real-world scenario implementation.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 via-emerald-400 to-sky-500 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Experience Timeline Card -->
+        <div class="max-w-4xl mx-auto glass-card p-8 sm:p-10 card-top-line space-y-8">
+          
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-sapphire-800 pb-6">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-600 to-emerald-600 border border-sky-400/50 flex items-center justify-center text-white shrink-0 shadow-lg">
+                <i data-lucide="award" class="w-7 h-7 text-white"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-white">ITI Summer Training</h3>
+                <p class="text-sm font-mono text-sky-400">Information Technology Institute (ITI)</p>
+              </div>
+            </div>
+            
+            <div class="px-3.5 py-1.5 rounded-full bg-sapphire-900 border border-sky-500/40 text-xs font-mono text-slate-300">
+              Intensive Technical Training
+            </div>
+          </div>
+
+          <!-- Highlight Bullet Points -->
+          <ul class="space-y-4 text-slate-300 text-base">
+            <li class="flex items-start gap-3.5">
+              <div class="w-6 h-6 rounded-full bg-sapphire-800 border border-sky-400/40 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+              </div>
+              <span>Completed an intensive Summer Course at ITI, focusing on <strong class="text-white">Cybersecurity</strong>, <strong class="text-white">Networking</strong>, <strong class="text-white">Cloud Computing</strong>, and <strong class="text-white">Linux</strong>.</span>
+            </li>
+            
+            <li class="flex items-start gap-3.5">
+              <div class="w-6 h-6 rounded-full bg-sapphire-800 border border-sky-400/40 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+              </div>
+              <span>Gained practical experience through hands-on labs and real-world technical scenarios.</span>
+            </li>
+
+            <li class="flex items-start gap-3.5">
+              <div class="w-6 h-6 rounded-full bg-sapphire-800 border border-sky-400/40 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+              </div>
+              <span>Developed a strong foundation in Network Security, Linux Administration, and Cloud Technologies.</span>
+            </li>
+
+            <li class="flex items-start gap-3.5">
+              <div class="w-6 h-6 rounded-full bg-sapphire-800 border border-sky-400/40 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+              </div>
+              <span>Strengthened my troubleshooting and problem-solving skills through practical technical training.</span>
+            </li>
+          </ul>
+
+          <!-- Tech Tags -->
+          <div class="pt-6 border-t border-sapphire-800 flex flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">Cybersecurity</span>
+            <span class="px-3 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">Networking</span>
+            <span class="px-3 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">Cloud Computing</span>
+            <span class="px-3 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">Linux Administration</span>
+            <span class="px-3 py-1 text-xs font-mono rounded bg-sapphire-900 border border-sky-500/30 text-slate-300">Troubleshooting</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         VISION SECTION (#vision)
+         ========================================================================== -->
+    <section id="vision" class="py-24 relative bg-sapphire-900/60 border-y border-sky-500/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-4xl mx-auto glass-card p-8 sm:p-12 relative overflow-hidden text-center space-y-8 border-sky-400/40">
+          
+          <!-- Decorative Background Icon Watermark -->
+          <i data-lucide="compass" class="w-72 h-72 text-sky-400/10 absolute -top-10 -right-10 pointer-events-none"></i>
+
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sapphire-850 border border-sky-400/40 text-sky-300 text-xs font-mono uppercase tracking-wider">
+            <i data-lucide="target" class="w-3.5 h-3.5 text-sky-400"></i> Career Direction
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            My Vision
+          </h2>
+
+          <div class="space-y-6 max-w-3xl mx-auto text-lg sm:text-xl text-slate-200 leading-relaxed font-light italic">
+            <p class="text-gradient-cyan-emerald font-medium not-italic">
+              "To become a skilled Cloud and Cybersecurity professional who designs secure, scalable, and reliable cloud solutions, while continuously learning and adapting to emerging technologies."
+            </p>
+            
+            <div class="w-24 h-0.5 bg-gradient-to-r from-sky-400 to-emerald-400 mx-auto"></div>
+
+            <p class="text-base sm:text-lg text-slate-300 not-italic font-normal">
+              My goal is to turn technical knowledge into practical solutions that create real value for organizations and contribute to a more secure digital future.
+            </p>
+          </div>
+
+          <!-- Cloud + Shield Visual Icons Row -->
+          <div class="pt-6 flex justify-center items-center gap-8 text-sky-400">
+            <div class="flex flex-col items-center gap-1">
+              <i data-lucide="cloud" class="w-6 h-6"></i>
+              <span class="text-[10px] font-mono text-slate-400">Cloud Architecture</span>
+            </div>
+            <span class="w-12 h-px bg-sky-400/40"></span>
+            <div class="flex flex-col items-center gap-1">
+              <i data-lucide="shield" class="w-6 h-6 text-emerald-400"></i>
+              <span class="text-[10px] font-mono text-slate-400">Security Shield</span>
+            </div>
+            <span class="w-12 h-px bg-sky-400/40"></span>
+            <div class="flex flex-col items-center gap-1">
+              <i data-lucide="network" class="w-6 h-6"></i>
+              <span class="text-[10px] font-mono text-slate-400">Network Grid</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         CONTACT SECTION (#contact)
+         ========================================================================== -->
+    <section id="contact" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sapphire-850 border border-sky-400/40 text-sky-300 text-xs font-mono uppercase tracking-wider">
+            <i data-lucide="message-square" class="w-3.5 h-3.5 text-sky-400"></i> Let's Connect
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Get In Touch</h2>
+          <p class="text-slate-400 text-sm sm:text-base">Feel free to reach out directly via WhatsApp, Email, or LinkedIn for inquiries and collaboration.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 via-emerald-400 to-sky-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left: Clickable Contact Cards -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <!-- WHATSAPP CLICKABLE CARD -->
+            <a href="https://wa.me/201110702430" target="_blank" rel="noopener noreferrer" class="glass-card p-5 block group card-top-line border-sky-500/30 hover:border-emerald-400/60 transition-all">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-400/40 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform">
+                    <i data-lucide="phone-call" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">WhatsApp</span>
+                    <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">01110702430</h3>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" class="copy-btn p-2 rounded-lg bg-sapphire-900 border border-sky-500/30 text-slate-400 hover:text-white" data-copy="01110702430" title="Copy Number">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                  <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-500 group-hover:text-emerald-400 transition-colors"></i>
+                </div>
+              </div>
+            </a>
+
+            <!-- EMAIL CLICKABLE CARD -->
+            <a href="mailto:m.ezzeldin4630@su.edu.eg" class="glass-card p-5 block group card-top-line border-sky-500/30 hover:border-sky-400/60 transition-all">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Email Address</span>
+                    <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-sky-300 transition-colors truncate max-w-[200px] sm:max-w-none">
+                      m.ezzeldin4630@su.edu.eg
+                    </h3>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" class="copy-btn p-2 rounded-lg bg-sapphire-900 border border-sky-500/30 text-slate-400 hover:text-white" data-copy="m.ezzeldin4630@su.edu.eg" title="Copy Email">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                  <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-500 group-hover:text-sky-300 transition-colors"></i>
+                </div>
+              </div>
+            </a>
+
+            <!-- LINKEDIN CLICKABLE CARD -->
+            <a href="https://www.linkedin.com/in/mahmoud-zidan-3172b33a3" target="_blank" rel="noopener noreferrer" class="glass-card p-5 block group card-top-line border-sky-500/30 hover:border-sky-400/60 transition-all">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-sky-950/80 border border-sky-400/40 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">LinkedIn Profile</span>
+                    <h3 class="text-sm font-bold text-white group-hover:text-sky-300 transition-colors">
+                      mahmoud-zidan-3172b33a3
+                    </h3>
+                  </div>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-500 group-hover:text-sky-400 transition-colors"></i>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Right: Interactive Quick Message Form -->
+          <div class="lg:col-span-7 glass-card p-8 card-top-line">
+            <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+              <i data-lucide="send" class="w-5 h-5 text-sky-400"></i> Send a Direct Message
+            </h3>
+            <p class="text-xs text-slate-400 mb-6">Fill out the form below to send an email inquiry directly.</p>
+
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="form-name" class="block text-xs font-mono text-slate-300 mb-1">Your Name</label>
+                  <input type="text" id="form-name" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-lg bg-sapphire-900 border border-sky-500/30 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:border-sky-400 transition-colors">
+                </div>
+                <div>
+                  <label for="form-email" class="block text-xs font-mono text-slate-300 mb-1">Your Email</label>
+                  <input type="email" id="form-email" required placeholder="name@example.com" class="w-full px-4 py-2.5 rounded-lg bg-sapphire-900 border border-sky-500/30 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:border-sky-400 transition-colors">
+                </div>
+              </div>
+
+              <div>
+                <label for="form-message" class="block text-xs font-mono text-slate-300 mb-1">Message</label>
+                <textarea id="form-message" rows="4" required placeholder="Write your message here..." class="w-full px-4 py-2.5 rounded-lg bg-sapphire-900 border border-sky-500/30 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:border-sky-400 transition-colors resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full btn-primary py-3 text-sm">
+                <span>Send Message via Email</span>
+                <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       FOOTER SECTION
+       ========================================================================== -->
+  <footer class="bg-sapphire-950 border-t border-sky-500/25 py-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Left Footer Info -->
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-sapphire-800 border border-sky-400/40 flex items-center justify-center">
+            <i data-lucide="shield" class="w-5 h-5 text-sky-400"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white">Mahmoud Gamal</h4>
+            <p class="text-xs font-mono text-slate-400">Cloud Security & Cybersecurity Specialist</p>
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4">
+          <a href="https://wa.me/201110702430" target="_blank" aria-label="WhatsApp" class="w-9 h-9 rounded-lg bg-sapphire-900 border border-sky-500/30 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-400 transition-colors">
+            <i data-lucide="phone-call" class="w-4.5 h-4.5"></i>
+          </a>
+          <a href="mailto:m.ezzeldin4630@su.edu.eg" aria-label="Email" class="w-9 h-9 rounded-lg bg-sapphire-900 border border-sky-500/30 flex items-center justify-center text-slate-400 hover:text-sky-300 hover:border-sky-400 transition-colors">
+            <i data-lucide="mail" class="w-4.5 h-4.5"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mahmoud-zidan-3172b33a3" target="_blank" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-sapphire-900 border border-sky-500/30 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-400 transition-colors">
+            <i data-lucide="linkedin" class="w-4.5 h-4.5"></i>
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-xs font-mono text-slate-500">
+          © <span id="year">2026</span> Mahmoud Gamal. All rights reserved.
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==========================================================================
+       PROJECT DETAILS MODAL
+       ========================================================================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-overlay">
+    <div class="glass-card max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border-sky-400/50 shadow-2xl relative">
+      
+      <!-- Close Button -->
+      <button id="modal-close" class="absolute top-4 right-4 p-2 rounded-lg bg-sapphire-900 border border-sky-500/40 text-slate-400 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Category Tag -->
+      <span id="modal-category" class="px-2.5 py-1 rounded text-[10px] font-mono bg-sapphire-800 text-sky-300 border border-sky-400/40 uppercase tracking-wider"></span>
+
+      <!-- Title -->
+      <h3 id="modal-title" class="text-2xl font-bold text-white mt-3 mb-4"></h3>
+
+      <!-- Description -->
+      <p id="modal-description" class="text-slate-300 text-sm leading-relaxed mb-6"></p>
+
+      <!-- Highlights List -->
+      <div class="space-y-3 mb-6">
+        <h4 class="text-xs font-mono text-sky-300 uppercase tracking-wider">Key Lab Highlights & Implementation</h4>
+        <ul id="modal-highlights" class="space-y-2"></ul>
+      </div>
+
+      <!-- Tech Stack Badges -->
+      <div class="space-y-2 mb-6">
+        <h4 class="text-xs font-mono text-sky-300 uppercase tracking-wider">Technologies & Tools</h4>
+        <div id="modal-tech" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <!-- Clear Repository Placeholder Alert (No fake GitHub link) -->
+      <div class="p-4 rounded-xl bg-sapphire-900 border border-sky-400/50 text-xs font-mono space-y-2">
+        <div class="flex items-center gap-2 text-sky-400 font-semibold">
+          <i data-lucide="info" class="w-4 h-4"></i> Repository / Demo Link Placeholder
+        </div>
+        <p id="modal-placeholder" class="text-slate-300 break-all"></p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       TOAST NOTIFICATION FLOATING CONTAINER
+       ========================================================================== -->
+  <div id="toast" class="glass-card px-4 py-3 border-sky-400/60 shadow-2xl flex items-center gap-3">
+    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
+    <span id="toast-text" class="text-xs font-mono text-slate-200"></span>
+  </div>
+
+
+  <!-- ==========================================================================
+       BACK TO TOP FLOATING BUTTON
+       ========================================================================== -->
+  <button id="back-to-top" aria-label="Back to Top" class="fixed bottom-6 right-6 z-40 p-3 rounded-xl bg-sky-600 hover:bg-sky-500 border border-sky-300 text-white font-bold shadow-xl opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4">
+    <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  </button>
+
+
+  <!-- Scripts -->
+  <script src="js/canvas-bg.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
